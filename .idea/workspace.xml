@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dde5ae5e-f989-4e00-bc3c-911d77939046" name="Default Changelist" comment="Revise .gitignore">
-      <change afterPath="$PROJECT_DIR$/src/components/MainComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/DishdetailComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DishdetailComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MenuComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MenuComponent.js" afterDir="false" />
     </list>
@@ -89,6 +86,7 @@
       <workItem from="1564876208419" duration="1004000" />
       <workItem from="1564878585482" duration="41000" />
       <workItem from="1564878629803" duration="90000" />
+      <workItem from="1564878730701" duration="1689000" />
     </task>
     <task id="LOCAL-00001" summary="Revise .gitignore">
       <created>1564878696555</created>
