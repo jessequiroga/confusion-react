@@ -11,6 +11,17 @@ import {LEADERS} from "../shared/leaders";
 import DishDetail from "./DishdetailComponent";
 import Contact from "./ContactComponent";
 import About from "./AboutComponent";
+import { connect } from 'react-redux';
+
+
+const mapStateToProps = state => {
+    return {
+        dishes: state.dishes,
+        comments: state.comments,
+        promotions: state.promotions,
+        leaders: state.leaders
+    }
+};
 
 class Main extends Component {
 
