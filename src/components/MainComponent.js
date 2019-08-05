@@ -35,11 +35,6 @@ class Main extends Component {
             leaders: LEADERS
         };
     }
-
-    onDishSelect(dishId) {
-        this.setState({selectedDish: dishId});
-    }
-
     render() {
 
         const HomePage = () => {
