@@ -11,7 +11,7 @@ import DishDetail from "./DishdetailComponent";
 import Contact from "./ContactComponent";
 import About from "./AboutComponent";
 import {connect} from 'react-redux';
-import {addComment, fetchComments, fetchDishes, fetchPromos} from '../redux/ActionCreators';
+import {addComment, fetchComments, fetchDishes, fetchPromos, postComment} from '../redux/ActionCreators';
 import {actions} from 'react-redux-form';
 import {DISHES} from "../shared/dishes";
 
@@ -35,6 +35,9 @@ const mapDispatchToProps = dispatch => ({
     },
     addComment: (dishId, rating, author, comment) => {
         dispatch(addComment(dishId, rating, author, comment))
+    },
+    postComment: (dishId, rating, author, comment) => {
+        dispatch(postComment(dishId, rating, author, comment))
     },
     fetchPromos: () => {
         dispatch(fetchPromos())
@@ -89,6 +92,7 @@ class Main extends Component {
                     comments={this.props.comments.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId, 10))}
                     commentsErrMess={this.props.comments.errMess}
                     addComment={this.props.addComment}
+                    postComment={this.props.postComment}
                 />
             );
         };
