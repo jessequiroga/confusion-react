@@ -124,30 +124,28 @@ function RenderDish({dish}) {
 }
 
 function RenderComments({comments, postComment, dishId}) {
-    {
-        if (comments != null) {
-            const commentComponent = comments.map((comment) => {
-                const date
-                    = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day: '2-digit'})
-                    .format(new Date(Date.parse(comment.date)));
-                return (<div key={comment.id}>
-                        {comment.comment}<br/>
-                        -- {comment.author},{date}<br/>
-                    </div>
-                );
-            });
-            return (
-                <div>
-                    <h4>Comments</h4>
-                    {commentComponent}
-                    <CommentForm dishId={dishId} postComment={postComment}/>
+    if (comments != null) {
+        const commentComponent = comments.map((comment) => {
+            const date
+                = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day: '2-digit'})
+                .format(new Date(Date.parse(comment.date)));
+            return (<div key={comment.id}>
+                    {comment.comment}<br/>
+                    -- {comment.author},{date}<br/>
                 </div>
             );
-        } else
-            return (
-                <div/>
-            );
-    }
+        });
+        return (
+            <div>
+                <h4>Comments</h4>
+                {commentComponent}
+                <CommentForm dishId={dishId} postComment={postComment}/>
+            </div>
+        );
+    } else
+        return (
+            <div/>
+        );
 }
 
 const DishDetail = (props) => {
