@@ -133,7 +133,7 @@ function RenderDish({dish}) {
 
 function RenderComments({comments, postComment, dishId}) {
     if (comments != null) {
-        const commentComponent = comments.map((comment) => {
+        comments.map((comment) => {
             const date
                 = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day: '2-digit'})
                 .format(new Date(Date.parse(comment.date)));

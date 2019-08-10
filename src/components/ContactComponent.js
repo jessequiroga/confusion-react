@@ -8,6 +8,7 @@ const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => val && (val.length >= len);
 const isNumber = (val) => !isNaN(Number(val));
 const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+
 class Contact extends Component {
 
     constructor(props) {
@@ -63,13 +64,6 @@ class Contact extends Component {
         return errors;
     }
 
-
-    handleBlur = (field) => (evt) => {
-        this.setState({
-            touched: {...this.state.touched, [field]: true},
-        });
-    };
-
     handleInputChange(event) {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -83,6 +77,7 @@ class Contact extends Component {
     handleSubmit(values) {
         console.log('Current State is: ' + JSON.stringify(values));
         alert('Current State is: ' + JSON.stringify(values));
+        this.props.postFeedback(values.firstname, values.lastname, values.telnum, values.email, values.agree, values.contactType, values.message);
         this.props.resetFeedbackForm();
         // event.preventDefault();
     }
@@ -185,7 +180,10 @@ class Contact extends Component {
                                                   placeholder="Tel. Number"
                                                   className="form-control"
                                                   validators={{
-                                                      required, minLength: minLength(3), maxLength: maxLength(15), isNumber
+                                                      required,
+                                                      minLength: minLength(3),
+                                                      maxLength: maxLength(15),
+                                                      isNumber
                                                   }}
                                     />
                                     <Errors
